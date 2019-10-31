@@ -5,10 +5,11 @@ import HomePage from "./components/HomePage";
 //import { routeros } from "react-syntax-highlighter/dist/styles/hljs";
 
 export default function Routes() {
-    return(
+    return (
         <Switch>
-            <Route path="/" exact component={HomePage}/>
+            <Route path="/" exact component={HomePage} />
             <Route path="/login" exact component={Login} />
+            
         </Switch>
-    )
+    );
 }
