@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
 
@@ -56,7 +57,7 @@ class signUp extends Component {
               placeholder="Password"
             />
           </Form.Group>
-          <button type="submit">Submit </button>
+          <Button type="submit">Submit </Button>
         </Form>
       </div>
     );
