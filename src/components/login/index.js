@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import { action } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import './Login.css';
+import "./Login.css";
 
-class Login extends Component {
+class login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ class Login extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="login">
         <Form>
           <Form.Group controlId="formGroupEmail">
             <Form.Label>Email address</Form.Label>
@@ -24,10 +24,11 @@ class Login extends Component {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
+          <button type="submit">Submit</button>
         </Form>
       </div>
     );
   }
-};
+}
 
-export default Login
+export default login;

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import Login from "./components/Login";
+import login from "./components/login";
+import signUp from "./components/signUp";
 import Routes from "./Routes";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
@@ -17,7 +18,9 @@ function App(props) {
           <IndexLinkContainer to="/login">
             <NavItem>Login</NavItem>
           </IndexLinkContainer>
-          
+          <IndexLinkContainer to="/signup">
+          <NavItem>Sign Up</NavItem>
+          </IndexLinkContainer>
         </Nav>
       </Navbar>
 
