@@ -24,7 +24,7 @@ class login extends Component {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </Form>
       </div>
     );

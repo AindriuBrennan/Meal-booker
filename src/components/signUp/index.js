@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./signUp.css";
+import "./SignUp.css";
 
 const initial_state = {
   username: "",
@@ -9,48 +9,52 @@ const initial_state = {
   password: ""
 };
 
+const signUpPage = () => (
+  <div>
+    <h1>Sign Up Form</h1>
+  </div>
+);
+
 class signUp extends Component {
   constructor(props) {
     super(props);
     this.state = { ...initial_state };
   }
 
-  handleSubmit(event) {
-    
-  }
-
+  handleSubmit(event) {}
 
   render() {
     const { username, email, password } = this.state;
 
     return (
-
-      <div classname="signUp">
-         
+      <div className="SignUp">
         <Form>
-            <Form.Group controlId="formUsername">
-          <Form.Control
-            name="username"
-            value={username}
-            type="text"
-            placeholder="Username"
-          />
-          </Form.Group>
-            <Form.Group>
-          <Form.Control
-            name="email"
-            value={email}
-            type="text"
-            placeholder="Email Address"
-          />
+          <Form.Group controlId="formUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              name="username"
+              value={username}
+              type="text"
+              placeholder="Username"
+            />
           </Form.Group>
           <Form.Group>
-          <Form.Control
-            name="password"
-            value={password}
-            type={password}
-            placeholder="Password"
-          />
+            <Form.Label>Email Address</Form.Label>
+            <Form.Control
+              name="email"
+              value={email}
+              type="text"
+              placeholder="Email Address"
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              name="password"
+              value={password}
+              type={password}
+              placeholder="Password"
+            />
           </Form.Group>
           <button type="submit">Submit </button>
         </Form>
