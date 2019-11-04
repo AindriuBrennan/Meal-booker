@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import login from "./components/login";
-import signUp from "./components/signUp";
+import Login from "./components/login";
+import SignUp from "./components/signUp";
+import SearcMealForm from "./components/searchMeal";
 import Routes from "./Routes";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
@@ -14,7 +15,7 @@ function App(props) {
         <Navbar.Brand>
           <Link to="/">Front Page</Link>
         </Navbar.Brand>
-        <Nav className="m1-auto">
+        <Nav className="justify-content-end">
           <IndexLinkContainer to="/login">
             <NavItem>Login</NavItem>
           </IndexLinkContainer>

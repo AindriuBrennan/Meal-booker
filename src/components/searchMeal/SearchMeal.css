@@ -1,12 +1,12 @@
 
-.searchMeal {
+.SearchMeal {
     text-align: center;
     background-color: #979696;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     font-size: calc(10px + 2vmin);
     color: rgb(187, 50, 50);
 }

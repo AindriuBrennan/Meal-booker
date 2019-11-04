@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import Login from '../src/components/login';
 import SignUp from '../src/components/signUp';
 import SearchMealForm from '../src/components/searchMeal';
-import "../src/components/login/Login.css";
 
 //Login story
 
