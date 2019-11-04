@@ -4,7 +4,7 @@ import { action } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import "./Login.css";
 
-class login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,4 +31,4 @@ class login extends Component {
   }
 }
 
-export default login;
+export default Login;

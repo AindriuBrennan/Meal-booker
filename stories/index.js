@@ -1,19 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import login from '../src/components/login';
-import signUp from '../src/components/signUp';
-import searchMealForm from '../src/components/searchMeal';
+import Login from '../src/components/login';
+import SignUp from '../src/components/signUp';
+import SearchMealForm from '../src/components/searchMeal';
+import "../src/components/login/Login.css";
 
 //Login story
 
 storiesOf("Meal Booker/Login", module).add("default", () => (
-    <login />
+    <Login />
 ));
 
 storiesOf("Meal Booker/Sign Up", module).add("default", () => (
-    <signUp />
+    <SignUp />
 ));
 
 storiesOf("Meal Booker/Search", module).add("default", () => (
-    <searchMealForm />
-))
+    <SearchMealForm />
+));

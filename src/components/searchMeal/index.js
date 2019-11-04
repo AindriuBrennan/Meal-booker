@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./searchMeal.css";
 
-class searchMealForm extends Component {
+class SearchMealForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,9 +37,10 @@ class searchMealForm extends Component {
           </Form.Group>
         </Form.Row>
       </Form>
+
     </div>
     );
   }
 }
 
-export default searchMealForm;
+export default SearchMealForm;
