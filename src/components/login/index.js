@@ -1,28 +1,71 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import { action } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
+import { withFirebase } from "../firebase";
 import { Form } from "react-bootstrap";
 import "./Login.css";
 
-class Login extends Component {
+const LoginPage = () => (
+  <div>
+    <h1>Login</h1>
+    <Login />
+  </div>
+);
+
+const initial_state = {
+  email: "",
+  password: ""
+};
+
+class LoginStandard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: "",
-      password: ""
-    };
+    this.state = { ...initial_state };
   }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { email, password } = this.state;
+
+    this.props.firebase
+      .loginExistingUserWithEmailAndPassword(email, password)
+      .then(() => {
+        this.setState({ ...initial_state });
+        this.props.history.push("/searchmeal");
+      })
+      .catch(error => console.log(error));
+  };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
   render() {
+    const { email, password } = this.state;
+
     return (
       <div className="login">
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="formGroupEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control
+              name="email"
+              type="text"
+              value={email}
+              placeholder="Enter email"
+              onChange={this.handleChange}
+            />
           </Form.Group>
           <Form.Group controlId="formGroupPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control
+              name="password"
+              type="password"
+              value={password}
+              placeholder="Password"
+              onChange={this.handleChange}
+            />
           </Form.Group>
           <Button type="submit">Submit</Button>
         </Form>
@@ -31,4 +74,8 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const Login = withRouter(withFirebase(LoginStandard));
+
+export default LoginPage;
+
+export { Login };

@@ -73,7 +73,7 @@ class SignUpStandard extends Component {
             <Form.Control
               name="password"
               value={password}
-              type={password}
+              type="password"
               onChange={this.handleChange}
               placeholder="Password"
             />
