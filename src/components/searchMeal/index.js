@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import "./SearchMeal.css";
+import "./searchMeal.css";
 
 class SearchMealForm extends Component {
   constructor(props) {

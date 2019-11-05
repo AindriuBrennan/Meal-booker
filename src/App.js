@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Login from "./components/login";
 import SignUp from "./components/signUp";
-import SearcMealForm from "./components/searchMeal";
+import SearchMealForm from "./components/searchMeal";
 import Routes from "./Routes";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";

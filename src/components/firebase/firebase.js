@@ -23,7 +23,7 @@ class Firebase {
   //create a new user with email and password
   signUpNewUserWithEmailAndPassword = (email, password) =>
   this.auth.createUserWithEmailAndPassword(email, password).catch(function(error){
-    var errorMessage = error.message;
+    
   });
 
   //login user with email and password
@@ -31,7 +31,6 @@ class Firebase {
   this.auth.signInWithEmailAndPassword(email, password);
 
   //signout a user
-
   userSignOut = () => this.auth.signOut();
 
 
