@@ -7,6 +7,7 @@ import Routes from "./Routes";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { IndexLinkContainer } from "react-router-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App(props) {
   return (
@@ -15,7 +16,7 @@ function App(props) {
         <Navbar.Brand>
           <Link to="/">Front Page</Link>
         </Navbar.Brand>
-        <Nav className="justify-content-end">
+        <Nav>
           <IndexLinkContainer to="/login">
             <NavItem>Login</NavItem>
           </IndexLinkContainer>
