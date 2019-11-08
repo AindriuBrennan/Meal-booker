@@ -7,13 +7,14 @@ import axios from "axios";
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 import "./searchMeal.css";
-import YelpSearchResults from "../searchResults";
+
 
 const initial_state = {
   location: "",
   cuisine: "",
   searchResults: []
 };
+
 
 class SearchMealForm extends Component {
   constructor(props) {
@@ -23,10 +24,12 @@ class SearchMealForm extends Component {
   //handle user input and inject it into yelp api get request
   handleSubmit = event => {
     event.preventDefault();
-    const { location, cuisine } = this.state;
-    // axios.get(`https://api.yelp.com/v3/businesses/search?location=${location}+IE&categories=${cuisine}`)
-    // .then(response => this.setState({searchResults}))
-    this.props.onFormSubmit(this.state(location, cuisine));
+    const { location, cuisine, searchResults} = this.state;
+    this.searchYelpRestaurants(location,cuisine, searchResults)
+  
+    // this.props.setState(location, cuisine, searchResults)
+    // .then(this.searchYelpRestaurants);
+   
   };
 
   handleChange = event => {
@@ -36,25 +39,29 @@ class SearchMealForm extends Component {
   //YELP http api get request
   searchYelpRestaurants = (location, cuisine) => {
     axios
-      .get(
-        `https://api.yelp.com/v3/businesses/search?location=${location}+IE&categories=${cuisine}`,
+      .get(//using CORS anywhere as a proxy to enable the yelp get request
+        `${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${location}+IE&categories=${cuisine}`,
         {
           headers: {
             Authorization: `Bearer ${process.env.REACT_APP_API_KEY_YELP}`
           }
         }
       )
-      .then(res => this.setState({ searchResults: res.data.businesses }));
+      .then((res) => this.setState({ searchResults: res.data.businesses }));
   };
 
   render() {
-    const { location, cuisine } = this.state;
+    const { location, cuisine, searchResults } = this.state;
 
     //create cards with the results from the Yelp API GET
-    const YelpSearchResults = this.state.searchResults.map(result => {
+    const YelpSearchResults = this.state.searchResults.map((result) => {
       return (
-        <div className="ResultCard">
-          <Card style={{ width: "18rem" }}>
+        <div className="ResultCard" key={result.id}>
+          <img src={result.img_url} alt=""/>
+          <h3>{result.name}</h3>
+          <p>{result.categories}</p>
+
+          {/* <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={result.image_url} />
             <Card.Body>
               <Card.Title>{result.name}</Card.Title>
@@ -64,7 +71,7 @@ class SearchMealForm extends Component {
               <ListGroupItem>{result.rating}</ListGroupItem>
             </ListGroup>
             <Button variant="primary">Book restaurant</Button>
-          </Card>
+          </Card> */}
         </div>
       );
     });
@@ -99,8 +106,8 @@ class SearchMealForm extends Component {
                 />
               </Form.Group>
             </Form.Row>
-            <Button>Submit</Button>
-            <Button>Clear</Button>
+            <Button type="submit">Submit</Button>
+            <Button type="reset">Clear</Button>
           </Form>
         </div>
 
