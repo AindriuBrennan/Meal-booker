@@ -6,11 +6,10 @@
   font-weight: bold;
 }
 
-.App .navbar{
-  position:fixed;
+.App .navbar {
+  position: fixed;
   top: 0;
   width: 100%;
   background-color: rgb(185, 162, 162);
   font-weight: bold;
 }
-

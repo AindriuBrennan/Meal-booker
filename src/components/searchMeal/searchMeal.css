@@ -10,3 +10,15 @@
     font-size: calc(10px + 2vmin);
     color: rgb(187, 50, 50);
 }
+
+.card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+}
+
+.card-img-top {
+    width: 150px;
+    height: 150px;
+}
