@@ -3,7 +3,7 @@ import { Col } from "react-bootstrap";
 
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import { Form, CardDeck ,Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
+import { Form, CardDeck, CardGroup ,Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 import "./searchMeal.css";
 
@@ -36,7 +36,7 @@ class SearchMealForm extends Component {
   searchYelpRestaurants = (location, cuisine) => {
     axios
       .get(
-        //using CORS anywhere as a proxy to enable the yelp get request
+        //using CORS anywhere as a proxy to enable the yelp get request. **https://github.com/Rob--W/cors-anywhere/** */
         `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?location=${location}+IE&categories=${cuisine}`,
         {
           headers: {
@@ -53,27 +53,33 @@ class SearchMealForm extends Component {
     //create cards with the results from the Yelp API GET
     const YelpSearchResults = this.state.searchResults.map(result => {
       return (
-        <div className="searchResults" key={result.id}>
+        <div className="searchResults" key={result.id} >      
           <CardDeck>
-            <Card>
+            <Card >
               <Card.Img variant="top" src={result.image_url} />
               <Card.Body>
                 <Card.Title>{result.name}</Card.Title>
               </Card.Body>
-              <ListGroup className="list-group-flush">
+              <ListGroup>
                 <ListGroupItem>Rating {result.rating}</ListGroupItem>
               </ListGroup>
               <Button variant="primary">Book restaurant</Button>
             </Card>
           </CardDeck>
-        </div>
+          </div>
       );
     });
-    // return YelpSearchResults;
-    // }
+    
 
     return (
       <React.Fragment>
+        <div className="background">
+        <div className="heading">
+          <h1>Search For Restaurants</h1>
+          <p>Search for a restauant in a city of your choosing, Indian Restaurants
+            appear under the term "indpak"
+          </p>
+        </div>
         <div className="SearchMeal">
           <Form onSubmit={this.handleSubmit}>
             <Form.Row>
@@ -105,7 +111,9 @@ class SearchMealForm extends Component {
           </Form>
         </div>
 
+
         {YelpSearchResults}
+        </div>
       </React.Fragment>
     );
   }

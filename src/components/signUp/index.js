@@ -46,6 +46,12 @@ class SignUpStandard extends Component {
     const { username, email, password } = this.state;
 
     return (
+      <React.Fragment>
+        <div className="background">
+        <div className="heading">
+          <h1>Sign up</h1>
+          <p>Register a new account</p>
+        </div>
       <div className="SignUp">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="formUsername">
@@ -81,6 +87,8 @@ class SignUpStandard extends Component {
           <Button type="submit">Submit </Button>
         </Form>
       </div>
+      </div>
+      </React.Fragment>
     );
   }
 }

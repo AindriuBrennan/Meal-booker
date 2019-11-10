@@ -1,24 +1,51 @@
+.SearchMealForm {
+  background-color: #979696;
+}
 
 .SearchMeal {
-    text-align: center;
-    background-color: #979696;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: calc(10px + 2vmin);
-    color: rgb(187, 50, 50);
+  text-align: center;
+  background-color: #979696;
+  min-height: 50vh;
+  display: flex;
+ 
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: calc(10px + 2vmin);
+  color: rgb(187, 50, 50);
 }
 
-.card {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
 
+/* The styling refuses to properly align the cards in a row
+    can't figure out why nothing will work */
+.searchResults {
+  display: flexbox;
+  float: left;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 5em;
+  flex-direction: row;
+  width: 20em;
+  height: 20em;
+  background-color: #979696;
+  
 }
+
 
 .card-img-top {
-    width: 150px;
-    height: 150px;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
+
+
+.heading {
+  text-align: center;
+  
+}
+
+.background {
+  background-color: #979696;
+  min-height: 100vh;
+}
+
