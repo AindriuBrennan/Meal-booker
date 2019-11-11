@@ -19,11 +19,12 @@
     can't figure out why nothing will work */
 .searchResults {
   display: flexbox;
+  flex-direction: row;
   float: left;
-  padding-right: 1em;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 5em;
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-bottom: 10em;
   flex-direction: row;
   width: 20em;
   height: 20em;
@@ -40,12 +41,13 @@
 
 
 .heading {
+  margin-top:3.5em;
   text-align: center;
   
 }
 
 .background {
   background-color: #979696;
-  min-height: 100vh;
+  min-height: 300vh;
 }
 

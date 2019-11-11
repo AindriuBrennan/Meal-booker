@@ -73,7 +73,9 @@ class SearchMealForm extends Component {
 
     return (
       <React.Fragment>
+
         <div className="background">
+          <div class="container">
         <div className="heading">
           <h1>Search For Restaurants</h1>
           <p>Search for a restauant in a city of your choosing, Indian Restaurants
@@ -113,6 +115,7 @@ class SearchMealForm extends Component {
 
 
         {YelpSearchResults}
+        </div>
         </div>
       </React.Fragment>
     );
