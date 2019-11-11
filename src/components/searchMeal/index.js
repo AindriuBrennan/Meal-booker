@@ -107,7 +107,7 @@ class SearchMealForm extends Component {
               </Form.Group>
             </Form.Row>
             <Button type="submit">Submit</Button>
-            <Button type="reset">Clear</Button>
+           
           </Form>
         </div>
 

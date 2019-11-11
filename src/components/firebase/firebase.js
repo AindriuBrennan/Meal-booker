@@ -30,8 +30,7 @@ class Firebase {
   loginExistingUserWithEmailAndPassword = (email, password) =>
   this.auth.signInWithEmailAndPassword(email, password);
 
-  //signout a user
-  userSignOut = () => this.auth.signOut();
+
 
 
 }
