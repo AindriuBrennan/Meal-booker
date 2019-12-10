@@ -14,7 +14,7 @@ export const addBooking = (
   newBookingDate
 ) => {
   return axios
-    .post("/bookings", {
+    .post("http://localhost:8080/bookings", {
       restaurantName: newRestaurantName,
       address: newAddress,
       phoneNo: newPhoneNo,
@@ -33,7 +33,7 @@ export const updateBooking = bookingTime => (
   updateBookingDate
 ) => {
   return axios
-    .put(`/bookings/${bookingTime}`, {
+    .put(`http://localhost:8080/bookings/${bookingTime}`, {
       restaurantName: updateRestaurantName,
       address: updateAddress,
       phoneNo: updatePhoneNo,
@@ -45,5 +45,5 @@ export const updateBooking = bookingTime => (
 
 //delete a booking
 export const deleteBooking = bookingTime => {
-  return axios.delete(`bookings/${bookingTime}`).then(resp => resp.data);
+  return axios.delete(`http://localhost:8080/bookings/${bookingTime}`).then(resp => resp.data);
 };
