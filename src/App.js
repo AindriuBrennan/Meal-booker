@@ -27,6 +27,9 @@ function App(props) {
           <IndexLinkContainer to="/searchmeal">
             <NavItem>Search</NavItem>
           </IndexLinkContainer>
+          <IndexLinkContainer to="/userbookings">
+            <NavItem>Bookings</NavItem>
+          </IndexLinkContainer>
         </Nav>
       </Navbar>
 

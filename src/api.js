@@ -2,7 +2,7 @@ import axios from "axios";
 
 //get all bookings
 export const getAllBookings = () => {
-  return axios("/bookings").then(resp => resp.data);
+  return axios.get("http://localhost:8080/bookings").then(resp => resp.data);
 };
 
 //add a booking route
@@ -24,8 +24,8 @@ export const addBooking = (
     .then(resp => resp.data);
 };
 
-//update booking route 
-export const updateBooking = (
+//update booking route
+export const updateBooking = bookingTime => (
   updateRestaurantName,
   updateAddress,
   updatePhoneNo,
@@ -33,7 +33,7 @@ export const updateBooking = (
   updateBookingDate
 ) => {
   return axios
-    .put("/bookings", {
+    .put(`/bookings/${bookingTime}`, {
       restaurantName: updateRestaurantName,
       address: updateAddress,
       phoneNo: updatePhoneNo,
@@ -41,4 +41,9 @@ export const updateBooking = (
       bookingDate: updateBookingDate
     })
     .then(resp => resp.data);
+};
+
+//delete a booking
+export const deleteBooking = bookingTime => {
+  return axios.delete(`bookings/${bookingTime}`).then(resp => resp.data);
 };
