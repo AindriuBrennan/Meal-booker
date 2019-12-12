@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { IndexLinkContainer } from "react-router-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import * as api from './api';
+import { Redirect } from 'react-router-dom';
 
 function App(props) {
   return (

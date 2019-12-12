@@ -1,5 +1,6 @@
 import axios from "axios";
 import Auth from './auth';
+import { AccordionCollapse } from "react-bootstrap";
 
 //get all bookings
 export const getAllBookings = () => {
@@ -47,4 +48,19 @@ export const updateBooking = bookingTime => (
 //delete a booking
 export const deleteBooking = bookingTime => {
   return axios.delete(`http://localhost:8080/bookings/${bookingTime}`).then(resp => resp.data);
+};
+
+
+
+
+//login a user
+export const login = async(email, password) => {
+  const resp = await axios.post('/users', {email: email, password: password});
+  return resp.data;
+};
+
+//register a new user
+export const signup = async(email, password) => {
+  const resp = await axios.post('/users?action=register', {email:email,password:password});
+  return resp.data;
 };
