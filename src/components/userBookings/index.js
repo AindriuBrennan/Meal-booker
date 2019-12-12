@@ -17,43 +17,45 @@ class UserBookings extends Component {
     api
       .getAllBookings()
       .then(resp => {
-        this.setState({ bookings: resp.bookings });
+        this.setState({ bookings: resp });
       })
       .catch(console.error);
   };
 //add a new booking
   
-      handleSubmit = event => {
-          event.preventDefault();
-          const {restName, restAddres, restPhoneNo, bookingTime, bookingDate} = this.state;
-          this.addNewBooking(restName, restAddres, restPhoneNo, bookingTime, bookingDate);
-      };
+      // handleSubmit = event => {
+      //     event.preventDefault();
+      //     const {restName, restAddres, restPhoneNo, bookingTime, bookingDate} = this.state;
+      //     this.addNewBooking(restName, restAddres, restPhoneNo, bookingTime, bookingDate);
+      // };
 
-      handleChange = event => {
-          this.setState({ [event.target.name]: event.target.value});
-      };
+      // handleChange = event => {
+      //     this.setState({ [event.target.name]: event.target.value});
+      // };
+// add a new booking, used addNewsItem from lab notes as guideline
+// addNewBooking = (restName, restAddres, restPhoneNo, bookingTime, bookingDate) =>  {
+//     api.addBooking().then(resp => {
+//         const newBoooking = {"restaurantName":resp.restName,"address":restAddres,"phoneNo":restPhoneNo,"bookingTime":bookingTime,"bookingDate":bookingDate};
+//         this.setState({bookings: this.state.bookings.concat([newBooking])});
+//     });
 
-addNewBooking = (restName, restAddres, restPhoneNo, bookingTime, bookingDate) =>  {
-    api.addBooking().then(resp => {
-        this.setState({bookings: resp.bookings})
-    });
-
-};
+// };
 
 //edit a booking
-  editBooking() {
-    api.updateBooking().then(resp =>{ this.setState({bookings:resp.bookings});
-    }).catch(console.error)
-  };
-//delete a booking
-  deleteBooking() {
-      api.deleteBooking()
+//   editBooking() {
+//     api.updateBooking().then(resp =>{ this.setState({bookings:resp.bookings});
+//     }).catch(console.error)
+//   };
+// //delete a booking
+//   deleteBooking() {
+//       api.deleteBooking()
 
-  }
+//   }
 
   render() {
     // const {restName, restAddres, restPhoneNo, bookingTime, bookingDate} = this.state;
     const { bookings } = this.state;
+    if(this.state.bookings.length==0) return;
     const userBookings = bookings.map(booking => {
       return (
         <React.Fragment>
