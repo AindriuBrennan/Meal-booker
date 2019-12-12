@@ -5,6 +5,7 @@ import SignUpPage from "./components/signUp";
 import HomePage from "./components/homePage";
 import SearchMealForm from "./components/searchMeal";
 import UserBookings from "./components/userBookings";
+import ExpressLogin from "./components/expressLogin";
 
 //import { routeros } from "react-syntax-highlighter/dist/styles/hljs";
 
@@ -16,6 +17,7 @@ export default function Routes() {
             <Route path="/signup" exact component={SignUpPage} />
             <Route path="/searchmeal" exact component={SearchMealForm} />
             <Route path="/userbookings" exact component={UserBookings}/>
+            <Route path="/expresslogin" exact component={ExpressLogin}/>
             
         </Switch>
     );

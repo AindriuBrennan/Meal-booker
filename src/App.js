@@ -20,7 +20,7 @@ function App(props) {
         </Navbar.Brand>
         <Nav>
           <IndexLinkContainer to="/login">
-            <NavItem>Login</NavItem>
+            <NavItem>Firebase Login</NavItem>
           </IndexLinkContainer>
           <IndexLinkContainer to="/signup">
             <NavItem>Sign Up</NavItem>
@@ -31,6 +31,9 @@ function App(props) {
           </IndexLinkContainer>
           <IndexLinkContainer to="/userbookings">
             <NavItem>Bookings</NavItem>
+          </IndexLinkContainer>
+          <IndexLinkContainer to="/expresslogin">
+            <NavItem>Custom Login </NavItem>
           </IndexLinkContainer>
         </Nav>
       </Navbar>

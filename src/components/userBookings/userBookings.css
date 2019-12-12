@@ -14,5 +14,16 @@
 }
 
 
+.addBooking {
 
+  padding-right: 5em;
+  padding-top: 5em;
+  padding-left: 5em;
+  padding-bottom: 10em;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height:100vh;
+  background-color: #979696;
+}
 
