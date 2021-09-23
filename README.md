@@ -26,11 +26,6 @@ https://www.yelp.com/fusion
 
 You will need to install the relative dependencies.
 
-## Data Model Design.
-
-This apps model was simple, I had wanted to make the search view a protected route but didnt get around to doing so. As a result, each view is accesible from each other
-
-![Alt text](/Screenshots/AppDataModel.png?raw=true "Simple diagram of the data model of the app")
 
 Code snippets
 
